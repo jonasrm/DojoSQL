@@ -187,7 +187,7 @@
 			if ( exists (
 				select	top 1 1
 				from	Tempdb..SysObjects
-				where	Name like '##TabelaTemporaria%' ) ) begin
+				where	Name = '##TabelaTemporaria' ) ) begin
 				drop table ##TabelaTemporaria;
 			end;</pre>
 		</div>
@@ -576,15 +576,15 @@
 		<div class="step slide"  data-x="9000" data-y="-1000" data-rotate-x="90" data-rotate-z="90">
 			<q>Boas Práticas 01</q>
 			<br/>
-			&bull; Normalize - basicamente divida tabelas grandes em tabelas menores e remova redundância
+			&bull; <b>Normalize</b> - basicamente divida tabelas grandes em tabelas menores e remova redundância
 			<br/><br/>
 			&bull; Evite tabelas resultado ou totalizadoras
 			<br/><br/>
 			&bull; Utilize transações, vários problemas podem ocorrer
 			<br/><br/>
-			&bull; Evite a utilização do SELECT * - traga somente o que for utilizar
+			&bull; Evite a utilização do <b>SELECT *</b> traga somente o que for utilizar
 			<br/><br/>
-			&bull; INSERT - específique os campos inseridos
+			&bull; <b>INSERT</b> - específique os campos inseridos
 			<pre class="brush: sql;">
 			insert into dbo.Tabela (Campo1, Campo2)
 			select Valor1, Valor2 from dbo.OutraTabela</pre>			
